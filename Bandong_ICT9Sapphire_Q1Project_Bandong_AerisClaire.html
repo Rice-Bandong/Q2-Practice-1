@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Q1 Project</title>
+  <style>
+    body {
+      background-image: url(https://i.pinimg.com/736x/d7/16/9f/d7169fc0b3fc997ab97382e82445475e.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: "Courier New", Courier, monospace;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2, h4 {
+      font-size: 16px;
+      color: floralwhite;
+      font-family: "Courier New", Courier, monospace;
+      margin: 10px auto;
+      text-align: center;
+      width: fit-content;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      background-color: #8998a1;
+      border-radius: 60px;
+      padding: 10px 20px;
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 27px;
+      color: floralwhite;
+      font-family: "Brush Script MT", cursive;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      background-color: #8998a1;
+      border-radius: 60px;
+      padding: 10px 20px;
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: 40px;
+      color: floralwhite;
+      text-align: center;
+      font-family: "Brush Script MT", cursive;
+    }
+
+    .brush-script {
+      font-family: "Brush Script MT", cursive;
+    }
+
+    .main-header {
+      color: floralwhite;
+      font-family: "Brush Script MT", cursive;
+      padding: 20px 0;
+      border-bottom: 5px solid #7b818580;
+      text-align: center;
+      background: linear-gradient(to right, #8a9499,#bcc6cc, #787a8f);
+    }
+
+    .section-header h2, .header-bg {
+      background-color: #8998a1;
+      border-radius: 50px;
+      padding: 12px 24px;
+      display: block;
+      text-align: center;
+      margin: 30px auto 20px;
+      width: fit-content;
+      color: floralwhite;
+      font-family: "Brush Script MT", cursive;
+      font-size: 35px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .links {
+      background-color: #85959b80;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 14px;
+    }
+
+    .links a {
+      background-color: #637987;
+      color: floralwhite;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 18px;
+      font-family: Trebuchet MS, sans-serif;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: 0.3s ease;
+      display: inline-block;
+    }
+
+    .links a:hover {
+      background-color: #4a5e6b;
+      box-shadow: 0 5px 7px rgba(0,0,0,0.3);
+    }
+
+    #form-box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 25px;
+      width: 80%;
+      max-width: 900px;
+      margin: 40px auto;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      border: 2px solid #8998a1;
+    }
+
+    #contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    #contact-form label h4 {
+      font-size: 15px;
+      color: floralwhite;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+   #contact-form input[type="text"],
+   #contact-form input[type="email"],
+   #contact-form input[type="tel"],
+   #contact-form select,
+   #contact-form textarea {
+   width: 100%;
+   max-width: 400px; 
+   padding: 12px;
+   border: 1.5px solid #bbb;
+   border-radius: 10px;
+   font-size: 14px;
+   font-family: "Courier New", Courier, monospace;
+   outline: none;
+   transition: 0.3s ease;
+  }
+
+    #contact-form input:focus,
+    #contact-form select:focus,
+    #contact-form textarea:focus {
+      border-color: #637987;
+      box-shadow: 0 0 5px rgba(99, 121, 135, 0.6);
+    }
+
+    #contact-form textarea {
+    max-width: 500px; 
+   resize: none;
+   }
+
+    .lastandfirst-name,
+    .email-phone-number {
+      display: flex;
+      gap: 20px;
+    }
+
+    .name,
+    .contact-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #contact-form input[type="submit"],
+    #contact-form input[type="reset"] {
+      padding: 12px 20px;
+      border-radius: 25px;
+      border: none;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    #contact-form input[type="submit"] {
+      background-color: #5aa16d;
+      color: white;
+    }
+    #contact-form input[type="submit"]:hover {
+      background-color: #4b8b5c;
+      transform: scale(1.05);
+    }
+
+    #contact-form input[type="reset"] {
+      background-color: #9c5252;
+      color: white;
+    }
+    #contact-form input[type="reset"]:hover {
+      background-color: #844343;
+      transform: scale(1.05);
+    }
+
+    .intro { display: flex; align-items: center; gap: 20px; }
+    .personal-logo { display: flex; align-items: center; gap: 20px; }
+    .profile-pic {
+      width: 150px; height: auto; border-radius: 12px;
+      border: 5px solid #383569;
+      box-shadow: 0 4px 6px rgba(0, 0, 3, 1.4)
+    }
+    .logo-img {
+      width: 150px; height: 150px; object-fit: cover;
+      border-radius: 50%; border: 4px solid #383569;
+      box-shadow: 0 4px 6px rgba(0, 0, 3, 1.4)
+    }
+    .work-img {
+      width: 450px; height: auto; border-radius: 12px;
+      display: block; margin: 10px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 3, 1.4)
+    }
+    .intro-text { flex: 1; text-align: left; }
+    .logo-text { flex: 1; text-align: left; }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <h1 class="brush-script">𐙚 My Personal Portfolio: A Glimpse of My Journey 𐙚</h1>
+  </header>
+
+  <div class="links">
+    <a href="#about">𝜗ৎ ABOUT</a>
+    <a href="#works">༻WORKS༺</a>
+    <a href="#contact">CONTACT 𝜗ৎ</a>
+  </div>
+
+  <div id="form-box">
+    <header class="section-header"><h2 class="brush-script">❧ My Personal Portfolio ☙</h2></header>
+    <br><br>
+
+    <h3 id="about" style="display:inline-block; margin-right:20px;" class="brush-script">★ About My Portfolio</h3>
+    <br><br>
+    <div class="intro">
+      <img src="https://i.imgur.com/lzRRFeg.jpeg" class="profile-pic">
+      <h4 class="intro-text">╰┈➤ Welcome to my portfolio. I'm Aeris! I love literature, astrology, music, and sooooo much more! Come get to know more about me as you scroll through my personal portfolio˚.🎀༘⋆</h4>
+    </div>
+    <br><br>
+
+    <div class="personal-logo">
+      <img src="https://i.imgur.com/2j25ngn.png" alt="personal logo" class="logo-img">
+      <h4 class="logo-text" style="display:inline-block; margin-right:20px;">╰┈➤ This is my very own original personal logo🌙ྀིྀི!</h4>
+    </div>
+    <br><br>
+
+    <header class="section-header"><h2 class="brush-script">❧ Hobbies, Interests, & Skills ☙</h2></header>
+    <br><br>
+
+    <h3 style="display:inline-block; margin-right:20px;font-family:Brush Script MT, cursive">★ My Hobbies</h3>
+    <br>
+    <ol>
+      <li>Playing violin🎻🎼</li>
+      <li>Writing my own stories📓</li>
+      <li>Writing poems📜</li>
+      <li>Crafting✂️</li>
+      <li>Painting🎨</li>
+      <li>Singing🎤</li>
+      <li>Playing with my cat🐾</li>
+    </ol>
+    <br>
+
+    <h3 style="display:inline-block; margin-right:20px;" class="brush-script">★ My Interests</h3>
+    <ul>
+      <li>Music🎧</li>
+      <li>Art & Craft🔨</li>
+      <li>Writing𓂃✒️</li>
+      <li>Poetry🪶</li>
+      <li>Nature🐚</li>
+      <li>Gaming👾</li>
+      <li>Photography📸</li>
+    </ul>
+    <br>
+
+    <h3 style="display:inline-block; margin-right:20px;" class="brush-script">★ My Skills</h3>
+    <dl>
+      <dt><h4 style="text-align:left; margin:0;">➵Literature</h4></dt>
+      <dd>✦ Poetry and writing 𓂃🖊</dd>
+      <dt><h4 style="text-align:left; margin:0;">➵Singing</h4></dt>
+      <dd>✦ Passed Glee Club auditions ‧₊˚♪ 𝄞₊˚⊹</dd>
+      <dt><h4 style="text-align:left; margin:0;">➵Speeches</h4></dt>
+      <dd>✦ 50/50 scores on oral activities 🗣🎙️˒﹚)</dd>
+      <dt><h4 style="text-align:left; margin:0;">➵Creativity</h4></dt>
+      <dd>✦ Arts & Craft 🎨🖌°❀⋆.ೃ࿔</dd>
+      <dt><h4 style="text-align:left; margin:0;">➵Resourcefulness</h4></dt>
+      <dd>✦ Use of DIY gifts -ˋˏ✄┈┈💭</dd>
+    </dl>
+    <br><br>
+
+    <header class="section-header"><h2 id="works" class="brush-script">❧ My Works ☙</h2></header>
+    <br><br>
+    <h3 style="display:inline-block; margin-right:20px;" class="brush-script">★ Want to know more about my html works? Here you go!</h3>
+    <br>
+    <dl>
+      <dt><h4 style="text-align:left; margin:0;">➵Practice 2</h4></dt>
+      <dd>✦ HTML Lists <img src="https://i.imgur.com/gX73GGi.png" alt="Practice 2 HTML work" class="work-img" style="border: 5px solid #995f69;"></dd>
+      <br>
+      <dt><h4 style="text-align:left; margin:0;">➵Drill 1</h4></dt>
+      <dd>✦ My Personal Slambook <img src="https://i.imgur.com/MsOaF9V.png" alt="Drill 1 HTML work" class="work-img" style="border: 5px solid #768094;"></dd>
+      <br>
+      <dt><h4 style="text-align:left; margin:0;">➵Drill 2</h4></dt>
+      <dd>✦ HTML Forms <img src="https://i.imgur.com/Q4eHVMo.jpeg" alt="Drill 2 HTML work" class="work-img" style="border: 5px solid #71a3a3;"></dd>
+    </dl>
+    <br>
+
+    <h3 style="display:inline-block; margin-right:20px;" class="brush-script">★ Want to know more about my poems? Here you go!</h3>
+    <br>
+    <dl>
+      <dt><h4 style="text-align:left; margin:0;">➵Mirror ThiS</h4></dt>
+      <dd>✦ <a href="https://docs.google.com/document/d/1_32zTPmjpyj-67b3qvjJw2gtB5kopSi_0bKt5Tp-zys/edit?tab=t.0">click here to view</a></dd>
+      <br>
+      <dt><h4 style="text-align:left; margin:0;">➵Wilted Away</h4></dt>
+      <dd>✦ <a href="https://docs.google.com/document/d/1AETtzHSLPhSiTwqSthtZHspzfssz_dEFmfcBnwuV5O0/edit?tab=t.0">click here to view</a></dd>
+      <br>
+      <dt><h4 style="text-align:left; margin:0;">➵Pieces</h4></dt>
+      <dd>✦ <a href="https://docs.google.com/document/d/1pK4coGNfTf9QOx_LKR1wA0Vnq_1BVy6-JMy2Xogjf6Y/edit?tab=t.0">click here to view</a></dd>
+    </dl>
+    <br><br>
+
+    <header class="section-header"><h2 id="contact" class="brush-script">❧ Contact Info ☙</h2></header>
+    <br><br>
+    <h3 style="display:inline-block; margin-right:20px;" class="brush-script">★ Want to contact me? Answer this form then!</h3>
+    <br><br>
+
+    <form id="contact-form">
+      <div class="lastandfirst-name">
+        <div class="name">
+          <label for="firstname"><h4 style="text-align:left; margin:0;">➢ First name?</h4></label>
+          <br>
+          <input type="text" id="firstname" name="firstname" placeholder="Enter first name here...">
+        </div>
+        <div class="name">
+          <label for="lastname"><h4 style="text-align:left; margin:0;">➣ Last name?</h4></label>
+          <br>
+          <input type="text" id="lastname" name="lastname" placeholder="Enter last name here...">
+        </div>
+      </div>
+
+      <div class="email-phone-number">
+        <div class="contact-info">
+          <label for="email1"><h4 style="text-align:left; margin:0;">➢ Email?</h4></label>
+          <br>
+          <input type="email" id="email1" name="email1" placeholder="Ex. aeris@gmail.com">
+        </div>
+        <div class="contact-info">
+          <label for="phone"><h4 style="text-align:left; margin:0;">➣ Phone Number?</h4></label>
+          <br>
+          <input type="tel" id="phone" name="phone" placeholder="Ex. +63 912 345 6789">
+        </div>
+      </div>
+
+      <label for="section"><h4 style="text-align:left; margin:0;">➢ How did you hear about me?</h4></label>
+      <select id="section" name="section">
+        <option value="Choose">Select an option:</option>
+        <option value="Social">Social Media</option>
+        <option value="Friend">From a friend</option>
+        <option value="School">School/Class Project</option>
+        <option value="Community">Online Community</option>
+        <option value="None">N/A</option>
+      </select>
+
+      <label for="comment"><h4 style="text-align:left; margin:0;">╰┈➤ Any messages you want to add?</h4></label>
+      <textarea id="comment" name="comment" placeholder="Say hello" rows="5" cols="35"></textarea>
+
+        <div class="button-container">
+        <input type="submit" id="submit" name="submit" value="Submit Form">
+        <input type="reset" id="reset" name="reset" value="Clear All">
+  </div>
+</div>
+  <footer>
+    <span style="font-family:Trebuchet;">
+      <p>© 2025 My Personal Portfolio | Created by [Aeris Bandong 9 Sapphire]</p>
+    </span>
+ 
+<!------------------------------------------------------------->
+<!--ChatGPT
+1. use of improvement for intro
+2. use of improvement for header (inspiration
+3. reccomendation for the use of imgur
+4. recommendation for more helpful html tutorial websites aside from W3Schools
+)-->
+
+<!--References:
+1. background pic -https://ph.pinterest.com/pin/6122149488348262/
+2. use of aesthetic symbols(e.g. "✦" )-https://www.piliapp.com/symbol/bullet-point/ and https://emojidb.org/aesthetic-symbols-emojis
+3. use of personal logo- canva.com
+4. use of imgur to shorten link address-imgur.com
+-->
